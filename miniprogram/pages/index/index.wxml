@@ -1,0 +1,85 @@
+<van-dialog id="van-dialog" />
+<van-notify id="van-notify" />
+
+<view class='qs'>
+  <view class = 'container'style="height: 150rpx">
+    <view class='container_head'>
+      <view class='container_head_main'>
+
+        <view>
+
+          <view class='main_Ttitle'>今日总价</view>
+
+          <view class='main_main'>{{dayPrice}}</view>
+
+          <!--<view class='main_mintitle'>元</view> -->
+
+        </view>
+
+        <view>
+
+          <view class='main_Ttitle'>本月总价</view>
+
+          <view class='main_main'>{{monPrice}}</view>
+
+          <!--<view class='main_mintitle'>次/分钟</view> -->
+
+        </view>
+
+      </view>
+    </view>
+
+  </view>
+
+  <view class='container'style="height: 350rpx">
+    <van-dropdown-menu>
+      <van-dropdown-item value="{{ categroyIndex }}" options="{{ categroy }}" bind:change="switchValue1" />
+      <van-dropdown-item value="{{ paymentIndex }}" options="{{ payment }}" bind:change="switchValue2" />
+    </van-dropdown-menu>
+
+    <van-cell-group>
+      <van-field
+        value="{{ goodsName }}"
+        label="名称"
+        placeholder="请输入名称"
+        border="{{ false }}"
+        bind:blur="nameBlur"
+      />
+
+      <van-field
+      value="{{ goodsPrice }}"
+      label="价格"
+      border="{{ false }}"
+      placeholder="请输入价格"
+      bind:change="onChange"
+      type="digit"
+      maxlength="6"
+      />
+    </van-cell-group>
+  </view>
+  
+  <view class='btn_container' >
+    <van-button class='btn' type="default" round bind:click='post'> 保 存 </van-button>
+    <van-button class='btn' type="default" round bind:click='clear'> 清 空 </van-button>
+  </view>
+
+  <view class='container' style="height: auto">
+
+    <van-divider contentPosition="center">今日已买</van-divider>
+      <view  wx:for="{{today}}" wx:for-index="id" wx:for-item="value">
+        <van-card
+        tag="{{value.categroy}}"
+        price="{{value.price}}"
+        desc="支付方式:{{value.payment}}"
+        title="{{value.name}}"
+        thumb="{{img[value.categroy]}}"
+        >
+        <view slot="footer">
+          <van-button size="mini"  data-id="{{id}}" bind:click="deleteData">删除</van-button>
+        </view>
+        </van-card>
+        <text>\n</text>
+      </view>
+  </view>
+
+</view>

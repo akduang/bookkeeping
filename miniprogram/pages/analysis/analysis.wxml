@@ -1,0 +1,160 @@
+<van-notify id="van-notify" />
+<view class='head'>
+
+  <view class="{{head0}}"  data-current="0"
+  bindtap='checkCurrent'>七日支出</view>
+
+  <view class='line'></view>
+
+  <view class="{{head1}}" data-current="1" bindtap='checkCurrent'>本月总计
+  </view>
+</view>
+
+<swiper current="{{currentData}}" class='swiper' style="height:600px;" duration="300" bindchange="bindchange">
+  <swiper-item>
+    
+    <view class='swiper_con'>
+      
+      <view class='mymain'>
+
+        <view class='qs'>
+
+          <view class="container">
+
+            <view class='container_head'>
+
+              <view class='container_head_top'>
+
+                <view class='prev' bindtap="look">
+
+                  <text class='iconfont icon-iconfontzhizuobiaozhun023126'></text>
+
+                  <text>查看详情 </text>
+
+                </view>
+
+                <view class='top_title'>{{week[0]}}~{{week[6]}}</view>
+
+                <view class='next' bindtap="share">
+
+                  <text>收藏分享</text>
+
+                  <text class='iconfont icon-jiantouyou'></text>
+
+                </view>
+
+              </view>
+
+              <view class='container_head_main'>
+
+                <view>
+
+                  <view class='main_Ttitle'>平均日总价</view>
+
+                  <view class='main_main'>{{dayMean}}</view>
+
+                  <!--<view class='main_mintitle'>元</view> -->
+
+                </view>
+
+                <view>
+
+                  <view class='main_Ttitle'>七日总价</view>
+
+                  <view class='main_main'>{{weekSum}}</view>
+
+                  <!--<view class='main_mintitle'>次/分钟</view> -->
+
+                </view>
+
+              </view>
+
+            </view>
+            
+            <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas" bindtouchstart="touchHandler"></canvas>
+
+          </view>
+        </view>
+        
+      </view>
+      
+    </view>
+   
+  </swiper-item>
+
+  <swiper-item>
+    <view class='swiper_con'>
+       <view class='mymain'>
+
+        <view class='qs'>
+
+          <view class="container">
+
+            <view class='container_head'>
+
+              <view class='container_head_top'>
+
+                <view class='prev' bindtap="look">
+
+                  <text class='iconfont icon-iconfontzhizuobiaozhun023126'></text>
+
+                  <text>查看详情 </text>
+
+                </view>
+
+                <view class='top_title'>{{mon[month-1]}}</view>
+
+                <view class='next' bindtap="share">
+
+                  <text>收藏分享</text>
+
+                  <text class='iconfont icon-jiantouyou'></text>
+
+                </view>
+
+              </view>
+
+              <view class='container_head_main'>
+
+                <view>
+
+                  <view class='main_Ttitle'>本月总价</view>
+
+                  <view class='main_main'>{{monPrice}}</view>
+
+                  <!--<view class='main_mintitle'>元</view> -->
+
+                </view>
+
+                <view>
+
+                  <view class='main_Ttitle'>平均日总价</view>
+
+                  <view class='main_main'>{{monMean}}</view>
+
+                  <!--<view class='main_mintitle'>次/分钟</view> -->
+
+                </view>
+
+              </view>
+
+            </view>
+
+            <canvas canvas-id="pieCanvas" disable-scroll="true" class="canvas"></canvas>
+
+          </view>
+        </view>
+        
+      </view>
+      
+    </view>
+  </swiper-item>
+ 
+</swiper>
+
+
+
+
+
+
+

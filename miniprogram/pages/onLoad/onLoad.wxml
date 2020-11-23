@@ -1,0 +1,11 @@
+<view class='begin'>
+<van-button
+  type="default"
+  bind:click="subscribe"
+>开始使用
+</van-button>
+</view>
+<view class='text_container'>
+<text>如出现问题或者有更好的建议欢迎联系</text>
+<text>ywonchall@163.com</text>
+</view>
