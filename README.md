@@ -23,8 +23,6 @@
 
 > 第一个页面，用于记账
 
-![image-20201123194950624](C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20201123194950624.png)
-
 - **1、价格显示**
   - 最顶端显示的是今日总价和本月总价，可以根据记账实时变化
 - **2、记账功能**
@@ -39,8 +37,6 @@
 
 > 第二个页面，主要用于账单分析，分为七日支出分析和本月分析
 
-![image-20201123195145360](C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20201123195145360.png) ![image-20201123195212137](C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20201123195212137.png) 
-
 - **1、七日支出**
   - 记录了自昨日起的前七天的内容，包括七日平均日总价，七日总价，及七日账单价格走势图。
   - 查看详情和收藏分享本来打算后期开发，结果因为自己都懒得记账了，所以也至今也没有开发。不过说不定等后面哪天心血来潮可以会完成这项工作（可能性不大），如果完成了我会来更新的。
@@ -48,9 +44,7 @@
   - 记录了本月总价和本月的平均日总价
   - 饼状图显示了各个类别（记账时选择的类别）花销占的比例。
 
-### 三、记账提醒功能
-
- ![image-20201123195510908](C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20201123195510908.png) ![image-20201123195533549](C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20201123195533549.png)  
+### 三、记账提醒功能  
 
 - 在小程序加载之初会向用户询问是否订阅用于每天向用户发送记账提醒。
 - 我这里设定的是每天晚上9:30用个人服务器自动向用户推送订阅，订阅内容包括 昨日支出，本月指出，本月收入（为了后续开发，在这里就提前加了）以及记账提醒。
@@ -62,17 +56,12 @@
 
 ## 数据库架构
 
-![image-20201123195907838](C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20201123195907838.png)
-
-
-
 - 数据库集合分为12个月份
 
 - 每条记录对应一个用户（openid）
 
 - 每个用户下对应本月的每一天及本月总价及openid
 
-  ![image-20201123200023158](C:\Users\lenovo\AppData\Roaming\Typora\typora-user-images\image-20201123200023158.png)
 
 - 每一天中，每条记账记录为一个对象，以随机生成的字符串作为id，以及本日总价
 
@@ -2119,9 +2108,6 @@ exports.main = async (event, context) => {
 
 ## 写在最后
 
-**以上就是全部代码，大家如果感兴趣可以到我的github上下载源码，记得star~万分感谢！**
+**以上就是全部代码，记得star~万分感谢！**
 
 **小程序码放在这里，欢迎大家扫码体验~如果有问题欢迎留言~**
-
-![gh_e96affd8a7e0_258](C:\Users\lenovo\Desktop\gh_e96affd8a7e0_258.jpg)
-
